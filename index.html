@@ -26,6 +26,13 @@
     <style>
       body {
         font-size: 16px;
+        font-family: "Josefin Sans", sans-serif;
+      }
+      .error {
+        background-image: url(./images/icon-error.svg);
+        background-repeat: no-repeat;
+        background-position: right 5% bottom 50%;
+        background-size: 7%;
       }
       .attribution {
         font-size: 11px;
@@ -37,40 +44,65 @@
     </style>
   </head>
   <body>
-    <section
-      class="w-full bg-gradient-to-b from-gradient2-first to-gradient2-second"
-    >
-      <div class="card">
-        <div class="logo flex justify-start items-start ml-4 py-8">
-          <img src="./images/logo.svg" alt="logo" />
+    <section class="w-full">
+      <div
+        class="card lg:flex lg:w-3/4 lg:h-screen lg:mx-auto lg:flex-row-reverse lg:justify-center lg:items-center"
+      >
+        <div
+          class="logo flex justify-start items-start ml-4 py-8 lg:relative lg:right-[88%] bottom-[40%]"
+        >
+          <img src="./images/logo.svg" alt="logo" class="w-[35%] lg:w-80" />
         </div>
-        <div class="hero">
+        <div class="hero lg:w-full lg:h-screen">
           <img
             src="./images/hero-mobile.jpg"
             alt="hero-mobile"
-            class="w-full"
+            class="w-full h-full object-contain lg:hidden"
+          />
+          <img
+            src="./images/hero-desktop.jpg"
+            alt="hero-desktop"
+            class="hidden lg:object-cover lg:h-screen lg:block"
           />
         </div>
-        <div class="text">
-          <h1>We're <span>coming soon</span></h1>
-          <p>
+        <div
+          class="text text-center my-10 flex flex-col justify-center items-center lg:text-left"
+        >
+          <h1
+            class="text-6xl uppercase font-light text-desaturated-red lg:mr-28 lg:tracking-wider lg:leading-tight lg:justify-items-start"
+          >
+            We're
+            <span class="font-normal text-dark-grayish-red">coming soon</span>
+          </h1>
+          <p
+            class="mt-4 px-4 w-[90%] text-desaturated-red lg:pl-0 lg:w-full lg:pr-28"
+          >
             Hello fellow shoppers! We're currently building our new fashion
             store. Add your email below to stay up-to-date with announcements
             and our launch deals.
           </p>
-          <div class="button">
-            <input type="email" placeholder="Email Address" />
-            <img
-              src="./images/icon-error.svg"
-              alt="icon-error"
-              class="hidden"
+          <div
+            class="relative w-[80%] flex items-center justify-center lg:justify-start lg:pl-0 lg:w-full lg:pr-28"
+          >
+            <input
+              type="email"
+              placeholder="Email Address"
+              class="mt-6 border-2 border-desaturated-red h-10 w-full rounded-md focus:border-desaturated-red focus:ring-1 placeholder:italic placeholder:px-4 placeholder:text-sm text-black lg:w-96 outline-none px-4"
             />
-            <img
-              src="./images/icon-arrow.svg"
-              alt="icon-arrow"
-              class="bg-dark-grayish-red w-8 h-5 rounded-full"
-            />
+
+            <button id="submit" type="submit" class="relative top-3 right-3">
+              <img
+                src="./images/icon-arrow.svg"
+                alt="icon-arrow"
+                class="bg-gradient-to-r from-gradient2-first to-gradient2-second w-16 h-11 rounded-full"
+              />
+            </button>
           </div>
+          <p
+            class="blind hidden text-xs font-thin relative -left-12 text-desaturated-red lg:-left-44"
+          >
+            Please provide a valid email
+          </p>
         </div>
       </div>
     </section>
@@ -82,8 +114,9 @@
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a
-        >. Coded by <a href="#">Your Name Here</a>.
+        >. Coded by <a href="#">Agus Setiawan</a>.
       </p>
     </footer>
+    <script src="main.js"></script>
   </body>
 </html>
